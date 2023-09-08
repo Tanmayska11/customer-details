@@ -16,7 +16,7 @@ public class SecurityConfig {
 
 	 @Bean
 	    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	        http.formLogin();
+	        http.formLogin().defaultSuccessUrl("/api/customers/",true);
 	        http.authorizeHttpRequests().anyRequest().authenticated();
 	        return http.build();
 	    }
